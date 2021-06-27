@@ -32,8 +32,8 @@
       <p class="text-center text-xl font-light mb-8">
         Make your research before going for interviews
       </p>
-      <a class="px-3 py-2 inline-block bg-white text-black rounded transition-all hover:bg-black hover:text-white" href="{{route('home')}}">Search Fake Jobs</a>
-      <a class="px-3 py-2 inline-block bg-white text-black rounded transition-all hover:bg-black hover:text-white" href="{{route('jobs.create')}}">Submit Fake Jobs</a>
+      <a class="px-3 py-2 inline-block bg-white text-black rounded transition-all hover:bg-black hover:text-white" href="/home">Search Fake Jobs</a>
+      <a class="px-3 py-2 inline-block bg-white text-black rounded transition-all hover:bg-black hover:text-white" href="/jobs/create">Submit Fake Jobs</a>
       <p class="mt-4 text-xs opacity-50">
         Made by <span class="font-bold">Afolabi Abiodun</span>.. copyright 2021
       </p>
