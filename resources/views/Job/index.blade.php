@@ -49,13 +49,13 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     <a href="#" class="text-indigo-600 hover:text-indigo-900">Delete</a>
-                    <form action="{{route('status', $job->id)}}" method="post">
+                    {{-- <form action="{{route('status', $job->id)}}" method="post">
                         @csrf
                         @method('PUT')
                     <button type="submit" class="text-indigo-600 hover:text-indigo-900">Approve/Dissaprove</button>
 
-                    </form>
-                    {{-- <a href="{{route('status', $job->id)}}" class="text-indigo-600 hover:text-indigo-900">Approve/Dissaprove</a> --}}
+                    </form> --}}
+                    <a href="{{route('status', $job->id)}}" class="text-indigo-600 hover:text-indigo-900">Approve/Dissaprove</a>
 
                 </td>
                 @empty

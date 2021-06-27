@@ -51,7 +51,7 @@ class JobController extends Controller
         $job->save();
 
         $notification = array(
-            'message' => 'Fake job added',
+            'message' => 'Fake job sent for review.. Admin will review',
             'alert-type' => 'success'
         );
         return redirect()->route('home')->with($notification);
@@ -104,15 +104,16 @@ class JobController extends Controller
 
     public function home()
     {
-        // $jobs = Job::where('status', 'approved')->paginate(10);
-        $jobs = Job::latest()->paginate(5);
+        $jobs = Job::where('status', 'approved')->paginate(10);
+        // $jobs = Job::latest()->paginate(5);
         return view('home', compact('jobs'));
     }
 
-    public function status(Job $job)
+    public function status($id)
     {
+        $job = Job::findOrFail($id);
 
-        dd('hello');
+        // dd('hello');
         if ($job->status == 'disapproved') {
             $job->Update([
                 'status' => 'approved'
