@@ -104,7 +104,8 @@ class JobController extends Controller
 
     public function home()
     {
-        $jobs = Job::where('status', 'approved')->paginate(10);
+        // $jobs = Job::where('status', 'approved')->paginate(10);
+        $jobs = Job::latest()->paginate(5);
         return view('home', compact('jobs'));
     }
 

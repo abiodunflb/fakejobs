@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
-
+use App\Models\Job;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,14 @@ Auth::routes([
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('jobs', JobController::class);
+
+Route::any('/search', function (Request $request) {
+    $q = $request->search;
+    $jobs = Job::where('name', 'LIKE', '%' . $q . '%')->paginate(5);
+    return view('searchPage', compact('jobs'));
+    // if (count($jobs) > 0) {
+    //     return view('searchPage', compact('jobs'));
+    // } else {
+    //     return back();
+    // }
+})->name('search');
