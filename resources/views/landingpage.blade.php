@@ -29,7 +29,7 @@
       <h1 class="leading-tight mb-8 text-5xl text-center font-thin">
         Browse All Fake Jobs Here
       </h1>
-      <p class="text-center text-xl font-light mb-8">
+      <p class="text-center md:text-xl font-light mb-8">
         Make your research before going for interviews
       </p>
       <a class="px-3 py-2 inline-block bg-white text-black rounded transition-all hover:bg-black hover:text-white" href="/home">Search Fake Jobs</a>
