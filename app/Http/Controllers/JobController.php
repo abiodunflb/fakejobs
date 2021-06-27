@@ -49,8 +49,12 @@ class JobController extends Controller
         $job->name = $request->name;
         $job->address = $request->address;
         $job->save();
-        return back();
-        // return redirect()->route('jobs.index')->with('success', 'Fake job added');
+
+        $notification = array(
+            'message' => 'Fake job sent for approval.. To be approved by admin',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('home')->with($notification);
     }
 
     /**
@@ -100,7 +104,7 @@ class JobController extends Controller
 
     public function home()
     {
-        $jobs = Job::where('status', 'disapproved')->paginate(10);
+        $jobs = Job::where('status', 'approved')->paginate(10);
         return view('home', compact('jobs'));
     }
 }
