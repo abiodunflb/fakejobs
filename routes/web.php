@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [JobController::class, 'home'])->name('home');
-Route::get('/jobs/{id}', [JobController::class, 'status'])->name('status');
+Route::get('/jobs/status/{id}', [JobController::class, 'status'])->name('status');
 
 Auth::routes([
 
