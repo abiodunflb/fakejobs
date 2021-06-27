@@ -13,7 +13,7 @@
       <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
         Company Name
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" type="text">
+      <input value="{{old('name')}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" type="text">
     @error('name')
         <p class="text-red-500 font-bold">{{$message}}</p>
     @enderror
@@ -24,7 +24,7 @@
       <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
         Location
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="address" type="text">
+      <input value="{{old('address')}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="address" type="text">
     @error('address')
         <p class="text-red-500 font-bold">{{$message}}</p>
     @enderror

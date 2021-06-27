@@ -103,10 +103,10 @@
                     toastr.error("{{ Session::get('message') }}");
                     break;
             }
-
-            toastr.options.closeMethod = 'fadeOut';
-            toastr.options.closeDuration = 900;
-            toastr.options.closeEasing = 'swing';
+            toastr.options.closeButton = true;
+            // toastr.options.closeMethod = 'fadeOut';
+            // toastr.options.closeDuration = 900;
+            // toastr.options.closeEasing = 'swing';
         @endif
     </script>
 </body>
