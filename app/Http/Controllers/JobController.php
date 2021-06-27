@@ -51,7 +51,7 @@ class JobController extends Controller
         $job->save();
 
         $notification = array(
-            'message' => 'Fake job sent for approval.. To be approved by admin',
+            'message' => 'Fake job added',
             'alert-type' => 'success'
         );
         return redirect()->route('home')->with($notification);
@@ -106,5 +106,22 @@ class JobController extends Controller
     {
         $jobs = Job::where('status', 'approved')->paginate(10);
         return view('home', compact('jobs'));
+    }
+
+    public function status(Job $job)
+    {
+
+        dd('hello');
+        if ($job->status == 'disapproved') {
+            $job->Update([
+                'status' => 'approved'
+            ]);
+        } else {
+            $job->Update([
+                'status' => 'disapproved'
+            ]);
+        }
+
+        return back();
     }
 }

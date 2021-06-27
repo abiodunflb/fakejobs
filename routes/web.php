@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', [JobController::class, 'home'])->name('home');
+Route::post('/jobs/{job}', [JobController::class, 'status'])->name('status');
 
 Auth::routes([
 
